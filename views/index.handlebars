@@ -1,0 +1,48 @@
+<div class="container">
+
+    <div class="jumbotron">
+        <h1>Burgerpedia</h1>
+
+        <form class="create-form">
+            <div class="form-group">
+                <label for="newBurg">Add New Burger!</label>
+                <input type="text" id="newBurg" name="newBurg">
+                <button type="submit" class="btn btn-success" id="newBurg">Create New Burger</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>New Burgers</h2>
+            <div class="newBurgDisplay">
+                <ul>
+                    {{#each beefs}}
+                    {{#unless devoured}}
+                    {{this.id}} - {{this.burgName}}
+                    <button type="button" class="devourBurg" id="devourBurg" data-id="{{this.id}}"
+                        data-nowEaten="{{devour}}">Devour It!</button>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Burgers Eaten</h2>
+            <div class="ateBurgDisplay">
+                <ul>
+                    {{#each beefs}}
+                    {{#if devoured}}
+                    {{this.id}} - {{this.burgName}}
+                    <button type="button" class="deleteBurg" id ="deleteBurg" data-id="{{this.id}}" data-nowEaten="{{devour}}">Delete Burger</button>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>

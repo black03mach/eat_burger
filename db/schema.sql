@@ -1,0 +1,15 @@
+-- DROP DATABASE IF EXISTS burg_db;
+-- CREATE DATABASE burg_db; 
+-- USE burgers_db;
+-- CREATE TABLE burgers (
+-- 	id int NOT NULL AUTO_INCREMENT,
+--     burgName varchar(255) NOT NULL,
+--     devoured BOOLEAN DEFAULT false,
+--     PRIMARY KEY (id)
+-- );
+
+-- INSERT INTO burgers (burgName) VALUES ("South West burger");
+-- INSERT INTO burgers (burgName) VALUES ("Double Bacon Double");
+-- INSERT INTO burgers (burgName) VALUES ("California Chicken Cheeseburger");
+-- INSERT INTO burgers (burgName, devoured) VALUES ("Hamburger", true);
+-- INSERT INTO burgers (burgName, devoured) VALUES ("Pizza burger", true);
