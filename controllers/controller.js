@@ -11,11 +11,12 @@ router.get("/", function (req, res) {
     });
 });
 
-router.post("/api/burgs", function (req, res) {
+router.post("/api/burgers", function (req, res) {
+    console.log(req.body)
     beef.create([
         "burgName", "devoured"
     ], [
-        req.body.burgName, req.body.devoured
+        req.body.burger_name, req.body.devoured
     ], function (result) {
         res.json({ id: result.inserId })
     })
@@ -23,6 +24,8 @@ router.post("/api/burgs", function (req, res) {
 
 router.put("/api/burgers/:id", function (req, res) {
     const condition = "id = " + req.params.id;
+    console.log(req.body.devoured)
+    console.log(req.params.id);
     beef.update({
         devoured: req.body.devoured
     }, condition, function (result) {

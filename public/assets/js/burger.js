@@ -1,5 +1,5 @@
 $(function () {
-    $(".devourBurg").on("click", function (event) {
+    $(".newBurgDisplay").on("click", ".devourBurg", function (event) {
         event.preventDefault();
         var id = $(this).data("id");
 
@@ -18,8 +18,9 @@ $(function () {
         );
     });
 
-    $(".create-form").on("submit", function (event) {
+    $(".create-form").on("click", "#newBurgButton", function (event) {
         event.preventDefault();
+        console.log("in here")
 
         var newBurger = {
             burger_name: $("#newBurg").val().trim(),
@@ -37,7 +38,7 @@ $(function () {
         );
     });
 
-    $(".deleteBurg").on("click", function (event) {
+    $(".ateBurgDisplay").on("click", ".deleteBurg", function (event) {
         var id = $(this).data("id");
         event.preventDefault();
 

@@ -1,5 +1,6 @@
 var connection = require("./connection");
 
+
 function printQuestionMarks(num) {
     var arr = [];
 
@@ -12,6 +13,8 @@ function printQuestionMarks(num) {
 function objToSql(ob) {
     var arr = [];
     for (var key in ob) {
+        var value = ob[key];
+        console.log(value)
         if (Object.hasOwnProperty.call(ob, key)) {
             if (typeof value === "string" && value.indexOf(" ") >= 0) {
                 value = "'" + value + "'";
@@ -48,7 +51,6 @@ var orm = {
             if (err) {
                 throw err;
             }
-
             cb(result);
         });
     },
@@ -70,6 +72,7 @@ var orm = {
             cb(result);
         });
     },
+
     delete: function (table, condition, cb) {
         var queryString = "DELETE FROM " + table;
         queryString += " WHERE ";
